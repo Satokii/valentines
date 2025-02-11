@@ -35,7 +35,7 @@ export default function Home() {
       setHearts(heartsArray);
     };
 
-    generateHearts(50);
+    generateHearts(10);
   }, []);
 
   const handleYesHover = () => {
@@ -77,7 +77,10 @@ export default function Home() {
           </button>
         </div>
       ) : (
-        <p className="sad-message">I thought you would have said yes...</p>
+        <div className="sad-message-container">
+          <div className="sad-face">😢</div>
+          <p className="sad-message">I thought you would have said yes...</p>
+        </div>
       )}
     </div>
   );
