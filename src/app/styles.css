@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #fef0f0;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #d30000;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Smooth transition for movement */
+  border: none;
+  border-radius: 5px;
+}
+
+.yes-button {
+  background-color: #d30000;
+  color: white;
+}
+
+.no-button {
+  background-color: #ccc;
+  color: #333;
+  margin-top: 10px;
+}
+
+.yes-button:hover {
+  background-color: #ff3333;
+}
+
+.no-button:hover {
+  background-color: #999;
+}
+
+.sad-message {
+  font-size: 1.5rem;
+  color: #d30000;
+  margin-top: 20px;
+}
