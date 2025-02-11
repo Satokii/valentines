@@ -5,6 +5,9 @@
   justify-content: center;
   height: 100vh;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
 h1 {
@@ -72,14 +75,6 @@ button {
   transform: scale(1.1);
 }
 
-.sad-message {
-  font-family: "Dancing Script", cursive;
-  font-size: 2rem;
-  color: #ff385c;
-  margin-top: 30px;
-  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.5);
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -88,5 +83,90 @@ button {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+/* Sad face styling */
+.sad-face {
+  font-size: 100px;
+  text-align: center;
+  animation: sad-face-shake 1s infinite;
+}
+
+/* Fading animation for sad message */
+@keyframes sad-message-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sad-message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  background-color: #f3f4f8; /* Soft grayish background */
+  padding: 20px;
+  border-radius: 10px;
+  width: 70%;
+  margin: 50px auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sad-message {
+  font-size: 24px;
+  color: #888;
+  font-family: 'Cursive', sans-serif;
+  font-style: italic;
+  text-align: center;
+  animation: sad-message-fade 1s ease-out;
+  margin-top: 10px;
+}
+
+/* Raindrop styling */
+.raindrop {
+  position: absolute;
+  top: -10px; /* Start just above the viewport */
+  background-color: #00aaff; /* Blue raindrop color */
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: rain 5s linear infinite;
+}
+
+/* Raindrop falling animation */
+@keyframes rain {
+  0% {
+    top: -10px;
+    opacity: 0.8;
+  }
+  100% {
+    top: 100vh; /* Fall all the way to the bottom */
+    opacity: 0; /* Fade out at the bottom */
+  }
+}
+
+/* Sad face shake animation */
+@keyframes sad-face-shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }

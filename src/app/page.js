@@ -7,6 +7,7 @@ export default function Home() {
   const [isNoClicked, setIsNoClicked] = useState(false);
   const [yesButtonPosition, setYesButtonPosition] = useState({ x: 0, y: 0 });
   const [hearts, setHearts] = useState([]);
+  const [raindrops, setRaindrops] = useState([]);
 
   useEffect(() => {
     const generateHearts = (numHearts) => {
@@ -35,8 +36,37 @@ export default function Home() {
       setHearts(heartsArray);
     };
 
-    generateHearts(10);
-  }, []);
+    const generateRaindrops = (numRaindrops) => {
+      let raindropsArray = [];
+      for (let i = 0; i < numRaindrops; i++) {
+        const randomX = Math.random() * window.innerWidth;
+        const randomSize = Math.random() * 10 + 5;
+        const animationDuration = Math.random() * 2 + 2;
+
+        raindropsArray.push(
+          <div
+            key={i}
+            className="raindrop"
+            style={{
+              left: randomX + "px",
+              width: randomSize + "px",
+              height: randomSize * 2 + "px",
+              animationDuration: `${animationDuration}s`,
+            }}
+          />
+        );
+      }
+      setRaindrops(raindropsArray);
+    };
+
+    if (isNoClicked) {
+      generateRaindrops(50);
+    }
+
+    if (!isNoClicked) {
+      generateHearts(50);
+    }
+  }, [isNoClicked]);
 
   const handleYesHover = () => {
     const movementAreaWidth = window.innerWidth * 0.5;
@@ -59,7 +89,9 @@ export default function Home() {
     <div className="container">
       <h1>Will you be my Valentine?</h1>
 
-      {hearts}
+      {!isNoClicked && hearts}
+
+      {raindrops}
 
       {!isNoClicked ? (
         <div>
