@@ -172,7 +172,7 @@ button {
   border-right: 4px solid #ff1493;
   white-space: nowrap;
   width: 0;
-  max-width: fit-content;
+  max-width: min-content;
   animation: typing 4s steps(30) 1s forwards, blinkCaret 0.75s step-end infinite;
 }
 
@@ -185,5 +185,67 @@ button {
 @keyframes blinkCaret {
   50% {
     border-color: transparent;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    height: auto;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .yes-button,
+  .no-button {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+  }
+
+  .sad-message-container {
+    width: 80%;
+    padding: 15px;
+  }
+
+  .sad-message {
+    font-size: 20px;
+  }
+
+  .sad-face {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .yes-button,
+  .no-button {
+    padding: 10px 18px;
+    font-size: 1rem;
+  }
+
+  .sad-message-container {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .sad-message {
+    font-size: 16px;
+  }
+
+  .sad-face {
+    font-size: 60px;
   }
 }
