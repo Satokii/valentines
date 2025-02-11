@@ -1,27 +1,27 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from 'react';
-// import styles from './Home.module.css';
+import { useState, useEffect } from "react";
+import "./styles.css";
 
 export default function Home() {
-  const [isYesClicked, setIsYesClicked] = useState(false);
   const [isNoClicked, setIsNoClicked] = useState(false);
   const [yesButtonPosition, setYesButtonPosition] = useState({ x: 0, y: 0 });
-  const [isButtonMoving, setIsButtonMoving] = useState(false);
 
   useEffect(() => {
-    if (isYesClicked) {
-      setTimeout(() => {
-        setYesButtonPosition({
-          x: Math.random() * 300,
-          y: Math.random() * 300,
-        });
-      }, 500);
-    }
-  }, [isYesClicked]);
+    setYesButtonPosition({ x: 0, y: 0 });
+  }, []);
 
-  const handleYesClick = () => {
-    setIsYesClicked(true);
+  const handleYesHover = () => {
+    const movementAreaWidth = window.innerWidth * 0.5;
+    const movementAreaHeight = window.innerHeight * 0.5;
+
+    const randomX = Math.random() * movementAreaWidth;
+    const randomY = Math.random() * movementAreaHeight;
+
+    setYesButtonPosition({
+      x: randomX,
+      y: randomY,
+    });
   };
 
   const handleNoClick = () => {
@@ -35,7 +35,7 @@ export default function Home() {
         <div>
           <button
             className="yes-button"
-            onClick={handleYesClick}
+            onMouseEnter={handleYesHover}
             style={{
               transform: `translate(${yesButtonPosition.x}px, ${yesButtonPosition.y}px)`,
             }}
