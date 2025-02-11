@@ -1,47 +1,53 @@
-"use client";
+"use client"
 
-import { useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from 'react';
+// import styles from './Home.module.css';
 
-export default function ValentinePage() {
-  const [rejected, setRejected] = useState(false);
-  const yesButtonRef = useRef(null);
+export default function Home() {
+  const [isYesClicked, setIsYesClicked] = useState(false);
+  const [isNoClicked, setIsNoClicked] = useState(false);
+  const [yesButtonPosition, setYesButtonPosition] = useState({ x: 0, y: 0 });
+  const [isButtonMoving, setIsButtonMoving] = useState(false);
 
-  const moveYesButton = () => {
-    if (yesButtonRef.current) {
-      const x = (Math.random() - 0.5) * 400;
-      const y = (Math.random() - 0.5) * 400;
-      yesButtonRef.current.style.transform = `translate(${x}px, ${y}px)`;
+  useEffect(() => {
+    if (isYesClicked) {
+      setTimeout(() => {
+        setYesButtonPosition({
+          x: Math.random() * 300,
+          y: Math.random() * 300,
+        });
+      }, 500);
     }
+  }, [isYesClicked]);
+
+  const handleYesClick = () => {
+    setIsYesClicked(true);
+  };
+
+  const handleNoClick = () => {
+    setIsNoClicked(true);
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-pink-100">
-      {!rejected ? (
-        <>
-          <h1 className="text-2xl font-bold text-red-600">
-            Will you be my Valentine?
-          </h1>
-          <div className="mt-6 flex gap-4">
-            <button
-              ref={yesButtonRef}
-              className="px-4 py-2 bg-red-500 text-white rounded-md shadow-md"
-              onMouseEnter={moveYesButton}
-            >
-              Yes
-            </button>
-            <button
-              className="px-4 py-2 bg-gray-500 text-white rounded-md shadow-md"
-              onClick={() => setRejected(true)}
-            >
-              No
-            </button>
-          </div>
-        </>
+    <div className="container">
+      <h1>Will you be my Valentine?</h1>
+      {!isNoClicked ? (
+        <div>
+          <button
+            className="yes-button"
+            onClick={handleYesClick}
+            style={{
+              transform: `translate(${yesButtonPosition.x}px, ${yesButtonPosition.y}px)`,
+            }}
+          >
+            Yes
+          </button>
+          <button className="no-button" onClick={handleNoClick}>
+            No
+          </button>
+        </div>
       ) : (
-        <h1 className="text-2xl font-bold text-gray-700">
-          I thought you would have said yes...
-        </h1>
+        <p className="sad-message">I thought you would have said yes...</p>
       )}
     </div>
   );
