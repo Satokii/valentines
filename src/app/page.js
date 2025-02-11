@@ -42,6 +42,7 @@ export default function Home() {
         const randomX = Math.random() * window.innerWidth;
         const randomSize = Math.random() * 10 + 5;
         const animationDuration = Math.random() * 2 + 2;
+        const animationDelay = Math.random() * 2 + "s";
 
         raindropsArray.push(
           <div
@@ -52,6 +53,7 @@ export default function Home() {
               width: randomSize + "px",
               height: randomSize * 2 + "px",
               animationDuration: `${animationDuration}s`,
+              animationDelay: animationDelay,
             }}
           />
         );
