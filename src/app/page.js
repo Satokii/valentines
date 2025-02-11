@@ -86,7 +86,7 @@ export default function Home() {
   };
 
   return (
-    <div className="container">
+    <div className={`container ${isNoClicked ? "no-theme" : ""}`}>
       <h1>Will you be my Valentine?</h1>
 
       {!isNoClicked && hearts}
