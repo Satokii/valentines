@@ -1,6 +1,8 @@
 body, html {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   height: 100%;
+  background: linear-gradient(to bottom right, #ff7eb9, #ff65a3);
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
 }
