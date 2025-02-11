@@ -96,25 +96,6 @@ button {
   color: #a1c4fd;
 }
 
-.no-theme .sad-message {
-  color: #f39c12;
-}
-
-.no-theme .yes-button {
-  background-color: #e74c3c;
-  color: #fff;
-}
-
-.no-theme .no-button {
-  background-color: #f39c12;
-  color: #fff;
-}
-
-.no-theme .sad-message-container {
-  background-color: #34495e;
-  color: #fff;
-}
-
 .no-theme .heart {
   display: none;
 }
@@ -167,17 +148,6 @@ button {
   }
 }
 
-@keyframes sad-message-fade {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .sad-message-container {
   display: flex;
   flex-direction: column;
@@ -194,10 +164,26 @@ button {
 
 .sad-message {
   font-size: 24px;
-  color: #f39c12;
-  font-family: "Cursive", sans-serif;
-  font-style: italic;
-  text-align: center;
-  animation: sad-message-fade 1s ease-out;
+  font-weight: bold;
   margin-top: 10px;
+  color: #ff1493;
+  text-align: center;
+  overflow: hidden;
+  border-right: 4px solid #ff1493;
+  white-space: nowrap;
+  width: 0;
+  max-width: fit-content;
+  animation: typing 4s steps(30) 1s forwards, blinkCaret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCaret {
+  50% {
+    border-color: transparent;
+  }
 }
