@@ -13,11 +13,11 @@
 
 h1 {
   font-family: "Dancing Script", cursive;
-  font-size: 3rem;
-  color: #fff;
+  font-size: 4rem;
+  color: #ffaa00;
   margin-bottom: 30px;
-  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
-  animation: fadeIn 2s ease-out;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.559);
+  animation: fadeIn 2s ease rgba(255, 255, 255, 0.4);
 }
 
 @keyframes floating-hearts {
@@ -63,7 +63,6 @@ button {
 .yes-button:hover {
   background: #ff0033;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-  transform: scale(1.1);
 }
 
 .no-button {
