@@ -66,7 +66,7 @@ export default function Home() {
     }
 
     if (!isNoClicked) {
-      generateHearts(50);
+      generateHearts(100);
     }
   }, [isNoClicked]);
 
