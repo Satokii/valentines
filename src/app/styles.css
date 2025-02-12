@@ -188,6 +188,7 @@ button {
   font-size: 24px;
   font-weight: bold;
   margin-top: 10px;
+  padding-right: 5px;
   color: #ff1493;
   text-align: center;
   overflow: hidden;
@@ -235,6 +236,7 @@ button {
 
   .sad-message {
     font-size: 20px;
+    padding-right: 2px;
   }
 
   .sad-face {
