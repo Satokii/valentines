@@ -17,7 +17,7 @@ h1 {
   color: #ffaa00;
   margin-bottom: 30px;
   text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.559);
-  animation: fadeIn 2s ease rgba(255, 255, 255, 0.4);
+  animation: fadeIn 2s ease;
 }
 
 @keyframes floating-hearts {
@@ -54,6 +54,7 @@ button {
   border-radius: 50px;
   font-weight: bold;
   margin: 10px 20px;
+  animation: fadeIn 0.5s ease;
 }
 
 .yes-button {
@@ -93,7 +94,28 @@ button {
 }
 
 .no-theme h1 {
-  color: #a1c4fd;
+  font-family: "Dancing Script", cursive;
+  font-size: 4rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 204, 255, 1),
+    0 0 40px rgba(0, 204, 255, 0.8), 0 0 60px rgba(0, 204, 255, 0.6);
+  animation: intenseGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes intenseGlow {
+  0% {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 204, 255, 1),
+      0 0 50px rgba(0, 204, 255, 0.9), 0 0 70px rgba(0, 204, 255, 0.7);
+  }
+  50% {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 204, 255, 1),
+      0 0 60px rgba(0, 204, 255, 1), 0 0 80px rgba(0, 204, 255, 0.9);
+  }
+  100% {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 204, 255, 1),
+      0 0 50px rgba(0, 204, 255, 0.9), 0 0 70px rgba(0, 204, 255, 0.7);
+  }
 }
 
 .no-theme .heart {
