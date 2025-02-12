@@ -118,6 +118,26 @@ button {
   }
 }
 
+.return-button {
+  background-color: #ffd700;
+  color: #2c3e50;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.return-button:hover {
+  background-color: #ffcc00;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 1);
+  transform: scale(1.1);
+}
+
 .no-theme .heart {
   display: none;
 }
@@ -218,7 +238,8 @@ button {
     padding: 20px;
   }
 
-  h1 {
+  h1,
+  .no-theme h1 {
     font-size: 2rem;
     margin-bottom: 20px;
   }
@@ -232,6 +253,10 @@ button {
   .sad-message-container {
     width: 80%;
     padding: 15px;
+  }
+
+  .return-button {
+    padding: 12px 20px;
   }
 
   .sad-message {

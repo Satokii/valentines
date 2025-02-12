@@ -87,6 +87,12 @@ export default function Home() {
     setIsNoClicked(true);
   };
 
+  const handleReturn = () => {
+    setIsNoClicked(false);
+    setYesButtonPosition({ x: 0, y: 0 });
+    setRaindrops([]);
+  };
+
   return (
     <div className={`container ${isNoClicked ? "no-theme" : ""}`}>
       <h1>Will you be my Valentine?</h1>
@@ -94,6 +100,12 @@ export default function Home() {
       {!isNoClicked && hearts}
 
       {raindrops}
+
+      {isNoClicked && (
+        <button className="return-button" onClick={handleReturn}>
+          Return
+        </button>
+      )}
 
       {!isNoClicked ? (
         <div>
