@@ -112,6 +112,7 @@ export default function Home() {
           <button
             className="yes-button"
             onMouseEnter={handleYesHover}
+            onClick={handleYesHover}
             style={{
               transform: `translate(${yesButtonPosition.x}px, ${yesButtonPosition.y}px)`,
             }}
